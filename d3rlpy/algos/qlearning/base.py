@@ -13,6 +13,7 @@ from typing import (
 )
 
 import numpy as np
+from d3rlpy.algos.qlearning.adaptive_update import AdaptiveUpdatePolicy, DefaultUpdatePolicy
 import torch
 from torch import nn
 from tqdm.auto import tqdm, trange

@@ -75,8 +75,9 @@ class TensorboardAdapterFactory(LoggerAdapterFactory):
     """
     _root_dir: str
 
-    def __init__(self, root_dir: str = "tensorboard_logs"):
+    def __init__(self, root_dir: str = "tensorboard_logs", experiment_name: str = "default"):
         self._root_dir = root_dir
+        self._experiment_name = experiment_name
 
     def create(self, experiment_name: str) -> TensorboardAdapter:
-        return TensorboardAdapter(self._root_dir, experiment_name)
+        return TensorboardAdapter(self._root_dir, self._experiment_name)
